@@ -7,7 +7,7 @@ This gem checks the style for Rails projects.
 Add this line to your Gemfile:
 
 ```ruby
-gem 'konvenit_style'
+gem "konvenit_style", git: "git@github.com:konvenit/konvenit_style.git"
 ```
 
 ## Usage
