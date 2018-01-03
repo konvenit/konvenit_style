@@ -41,6 +41,11 @@ Documentation: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/Document
 Performance/TimesMap:
   Enabled: false
 
+# Bundler
+
+Bundler/OrderedGems:
+  Enabled: false
+
 # Style
 
 # Prefer &&/|| over and/or.
