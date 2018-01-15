@@ -151,14 +151,18 @@ Layout/CaseIndentation:
   # https://github.com/konvenit/guidelines/blob/master/ruby.md#indent-when-to-case
   Enabled: false
 
+
+## EnforcedStyle: with_first_parameter
+#
+#foo :bar,
+#    :baz
+Layout/AlignParameters:
+  #http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/AlignParameters
+  EnforcedStyle: with_first_parameter
+
 Layout/MultilineOperationIndentation:
   # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/MultilineOperationIndentation
   EnforcedStyle: indented
-
-Layout/AlignParameters:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/AlignParameters
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#no-double-indent
-  EnforcedStyle: with_fixed_indentation
 
 Layout/IndentArray:
   # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/IndentArray
