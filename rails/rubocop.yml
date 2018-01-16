@@ -120,6 +120,18 @@ Style/FormatStringToken:
 Style/UnneededPercentQ:
   Enabled: true
 
+#This cop makes sure that predicates are named properly.
+#http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Style/PredicateName
+## bad
+#def has_value?
+#end
+#
+## good
+#def value?
+#end
+Style/PredicateName:
+  Enabled: false
+
 # Layout
 Layout/AlignHash:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/AlignHash
