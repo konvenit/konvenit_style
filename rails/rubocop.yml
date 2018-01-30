@@ -121,7 +121,7 @@ Style/UnneededPercentQ:
   Enabled: true
 
 #This cop makes sure that predicates are named properly.
-#http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Style/PredicateName
+#http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Naming/PredicateName
 ## bad
 #def has_value?
 #end
@@ -129,7 +129,7 @@ Style/UnneededPercentQ:
 ## good
 #def value?
 #end
-Style/Naming:
+Naming/PredicateName:
   Enabled: false
 
 # Layout
