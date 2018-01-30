@@ -129,7 +129,7 @@ Style/UnneededPercentQ:
 ## good
 #def value?
 #end
-Style/PredicateName:
+Style/Naming:
   Enabled: false
 
 # Layout
