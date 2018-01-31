@@ -240,5 +240,5 @@ Naming/VariableNumber:
   Enabled: false
 
 Style/SymbolArray
-  https://github.com/bbatsov/ruby-style-guide#percent-i
+  # https://github.com/bbatsov/ruby-style-guide#percent-i
   Enabled: false
