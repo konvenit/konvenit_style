@@ -239,6 +239,6 @@ Naming/VariableNumber:
   # http://www.rubydoc.info/gems/rubocop/0.43.0/RuboCop/Cop/Naming/VariableNumber
   Enabled: false
 
-Style/SymbolArray
+Style/SymbolArray:
   # https://github.com/bbatsov/ruby-style-guide#percent-i
   Enabled: false
