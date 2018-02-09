@@ -238,5 +238,5 @@ Naming/VariableNumber:
 ## good
 #def value?
 #end
-Name/PredicateName:
+Naming/PredicateName:
   Enabled: false
