@@ -120,18 +120,10 @@ Style/FormatStringToken:
 Style/UnneededPercentQ:
   Enabled: true
 
-#This cop makes sure that predicates are named properly.
-#http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Style/PredicateName
-## bad
-#def has_value?
-#end
-#
-## good
-#def value?
-#end
-Style/PredicateName:
+Style/SymbolArray:
+  # https://github.com/bbatsov/ruby-style-guide#percent-i
   Enabled: false
-
+  
 # Layout
 Layout/AlignHash:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/AlignHash
@@ -197,7 +189,6 @@ Lint/AmbiguousBlockAssociation: # http://www.rubydoc.info/gems/rubocop/RuboCop/C
                                 # https://github.com/konvenit/guidelines/blob/master/ruby.mdruby-style-guide#syntax
   Exclude:
     - "spec/**/*"
-
 # Metrics
 Metrics/LineLength:
   # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Metrics/LineLength
@@ -238,7 +229,14 @@ Metrics/PerceivedComplexity:
 Naming/VariableNumber:
   # http://www.rubydoc.info/gems/rubocop/0.43.0/RuboCop/Cop/Naming/VariableNumber
   Enabled: false
-
-Style/SymbolArray:
-  # https://github.com/bbatsov/ruby-style-guide#percent-i
+#This cop makes sure that predicates are named properly.
+#http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Name/PredicateName
+## bad
+#def has_value?
+#end
+#
+## good
+#def value?
+#end
+Name/PredicateName:
   Enabled: false
