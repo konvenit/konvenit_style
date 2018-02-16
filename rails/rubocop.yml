@@ -35,6 +35,9 @@ Rails/FilePath:
 Rails/SkipsModelValidations: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/SkipsModelValidations
   Enabled: false
 
+Rails/HttpPositionalArguments: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/HttpPositionalArguments
+  Enabled: false
+  
 Documentation: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/Documentation
   Enabled: false
 
@@ -123,7 +126,7 @@ Style/UnneededPercentQ:
 Style/SymbolArray:
   # https://github.com/bbatsov/ruby-style-guide#percent-i
   Enabled: false
-  
+
 # Layout
 Layout/AlignHash:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/AlignHash
