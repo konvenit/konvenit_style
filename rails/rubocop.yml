@@ -37,7 +37,7 @@ Rails/SkipsModelValidations: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/
 
 Rails/HttpPositionalArguments: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/HttpPositionalArguments
   Enabled: false
-  
+
 Documentation: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/Documentation
   Enabled: false
 
@@ -151,7 +151,7 @@ Layout/IndentationWidth:
 Layout/SpaceInsideHashLiteralBraces:
   # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/SpaceInsideHashLiteralBraces
   # https://github.com/konvenit/guidelines/blob/master/ruby.md#spaces-operators
-  EnforcedStyle: no_space
+  EnforcedStyle: space
 
 Layout/CaseIndentation:
   # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/CaseIndentation
@@ -242,4 +242,8 @@ Naming/VariableNumber:
 #def value?
 #end
 Naming/PredicateName:
+  Enabled: false
+
+#https://github.com/bbatsov/ruby-style-guide#accessor_mutator_method_names
+Naming/AccessorMethodName:
   Enabled: false
