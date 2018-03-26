@@ -127,6 +127,10 @@ Style/SymbolArray:
   # https://github.com/bbatsov/ruby-style-guide#percent-i
   Enabled: false
 
+Style/ModuleFunction:
+  # https://github.com/bbatsov/ruby-style-guide#module-function
+  Enabled: false
+
 # Layout
 Layout/AlignHash:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/AlignHash
