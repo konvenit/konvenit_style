@@ -135,6 +135,7 @@ Style/ModuleFunction:
 Layout/AlignHash:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/AlignHash
   EnforcedColonStyle: table
+  EnforcedHashRocketStyle: table
 
 # No extra empty lines.
 Layout/EmptyLines:
