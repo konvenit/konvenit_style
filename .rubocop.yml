@@ -1,0 +1,1 @@
+inherit_from: rails/rubocop.yml

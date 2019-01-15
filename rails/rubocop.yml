@@ -55,7 +55,7 @@ Bundler/OrderedGems:
 Style/AndOr:
   Enabled: true
 #
-Style/MethodMissing:
+Style/MethodMissingSuper:
   Enabled: false
 # allow german comments
 Style/AsciiComments:
