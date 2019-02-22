@@ -186,7 +186,7 @@ Layout/MultilineMethodCallIndentation:
 # assignments, where it should be aligned with the LHS.
 
 Layout/EndAlignment:
-  # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Lint/EndAlignment
+  # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/EndAlignment
   EnforcedStyleAlignWith: keyword
 
 Lint/AmbiguousBlockAssociation: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Lint/AmbiguousBlockAssociation
