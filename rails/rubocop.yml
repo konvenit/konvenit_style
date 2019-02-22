@@ -81,6 +81,7 @@ Style/HashSyntax:
 # don't use if/unless expression that can be replace with a guard clause.
 Style/GuardClause:
   Enabled: false
+
 Style/Next:
   Enabled: false
 
@@ -99,11 +100,6 @@ Style/SignalException:
 Style/RegexpLiteral:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/RegexpLiteral
   # https://github.com/konvenit/guidelines/blob/master/ruby.md#percent-r
-  Enabled: false
-
-Style/GuardClause:
-  # http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Style/GuardClause
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#no-nested-conditionals
   Enabled: false
 
 Style/MutableConstant:
@@ -189,7 +185,7 @@ Layout/MultilineMethodCallIndentation:
 # Align `end` with the matching keyword or starting expression except for
 # assignments, where it should be aligned with the LHS.
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Lint/EndAlignment
   EnforcedStyleAlignWith: keyword
 
