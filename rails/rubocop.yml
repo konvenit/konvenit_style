@@ -172,7 +172,7 @@ Layout/MultilineOperationIndentation:
   # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/MultilineOperationIndentation
   EnforcedStyle: indented
 
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/IndentArray
   Enabled: false
 
