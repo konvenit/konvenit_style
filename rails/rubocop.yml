@@ -41,9 +41,6 @@ Rails/HttpPositionalArguments: # http://www.rubydoc.info/gems/rubocop/RuboCop/Co
 Documentation: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/Documentation
   Enabled: false
 
-Performance/TimesMap:
-  Enabled: false
-
 # Bundler
 
 Bundler/OrderedGems:
