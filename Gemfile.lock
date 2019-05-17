@@ -4,6 +4,7 @@ PATH
     konvenit_style (0.2.4)
       rubocop (~> 0.68.1)
       rubocop-checkstyle_formatter
+      rubocop-performance
 
 GEM
   remote: https://rubygems.org/
@@ -24,6 +25,8 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.6)
     rubocop-checkstyle_formatter (0.4.0)
       rubocop (>= 0.35.1)
+    rubocop-performance (1.3.0)
+      rubocop (>= 0.68.0)
     ruby-progressbar (1.10.0)
     unicode-display_width (1.5.0)
 

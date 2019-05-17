@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rubocop", "~> 0.68.1"
   spec.add_dependency "rubocop-checkstyle_formatter"
+  spec.add_dependency "rubocop-performance"
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
