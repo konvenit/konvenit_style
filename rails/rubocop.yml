@@ -26,10 +26,13 @@ Rails/Delegate:  # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/Delega
 Rails/Output:    # http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Rails/Output
   Enabled: false
 
-Rails/OutputSafety:
+Rails/OutputSafety: # https://www.rubydoc.info/gems/rubocop/0.41.2/RuboCop/Cop/Rails/OutputSafety
   Enabled: false
 
-Rails/FilePath:
+Rails/FilePath:  # https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/FilePath
+  Enabled: false
+
+Rails/ActiveRecordAliases: # https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/ActiveRecordAliases
   Enabled: false
 
 Rails/SkipsModelValidations: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/SkipsModelValidations
