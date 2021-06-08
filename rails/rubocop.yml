@@ -4,247 +4,271 @@
 # rubocop docs https://rubocop.readthedocs.io/en/latest/cops_style
 # rubocop overview https://github.com/bbatsov/rubocop/blob/master/manual/cops_style.md
 
+# its based on the rails rubocop settings
+# https://github.com/rails/rails/blob/57201658e7c16d1a90ca53dc5bc974311db8ec1f/.rubocop.yml
+
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
+  DisabledByDefault: true
   ExtraDetails: true
   UseCache: true
+  SuggestExtensions: false
 
   Exclude:
     - "db/schema.rb"
     - "bin/*"
     - "vendor/**/*"
     - "node_modules/**/*"
+    - "ruby-build/**/*"
 
-# Rails
-Rails:
-  Enabled: true
+Layout/LineLength:
+  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/LineLength
+  # https://github.com/konvenit/guidelines/blob/master/ruby.md#80-character-limits
+  Max: 130
 
-Rails/Delegate:  # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/Delegate
-  Enabled: false
-
-Rails/Output:    # http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Rails/Output
-  Enabled: false
-
-Rails/OutputSafety: # https://www.rubydoc.info/gems/rubocop/0.41.2/RuboCop/Cop/Rails/OutputSafety
-  Enabled: false
-
-Rails/FilePath:  # https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/FilePath
-  Enabled: false
-
-Rails/ActiveRecordAliases: # https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/ActiveRecordAliases
-  Enabled: false
-
-Rails/SkipsModelValidations: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/SkipsModelValidations
-  Enabled: false
-
-Rails/HttpPositionalArguments: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/HttpPositionalArguments
-  Enabled: false
-
-Documentation: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/Documentation
-  Enabled: false
-
-# Bundler
-
-Bundler/OrderedGems:
-  Enabled: false
-
-# Style
-
-# Prefer &&/|| over and/or.
-Style/AndOr:
-  Enabled: true
-#
-Style/MethodMissingSuper:
-  Enabled: false
-# allow german comments
-Style/AsciiComments:
-  Enabled: false
-
-# Do not use braces for hash literals when they are the last argument of a
-# method call.
-Style/BracesAroundHashParameters:
-  Enabled: true
-
-Style/ClassAndModuleChildren:
-  # http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Style/ClassAndModuleChildren
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#namespace-definition
-  Enabled: false
-
-Style/CommentedKeyword: #bug in rubocop  def search_button(link = "#", text = "Suchen", options = {}) is wrong
-  Enabled: false
-
-# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
-Style/HashSyntax:
-  Enabled: true
-
-# don't use if/unless expression that can be replace with a guard clause.
-Style/GuardClause:
-  Enabled: false
-
-Style/Next:
-  Enabled: false
-
-# use double quotes for strings
-Style/StringLiterals:
-  # http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Style/StringLiterals
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#consistent-string-literals
-  Enabled: true
-  EnforcedStyle: double_quotes
-
-Style/SignalException:
-  # http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Style/SignalException
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#prefer-raise-over-fail
-  EnforcedStyle: only_raise
-
-Style/RegexpLiteral:
-  # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/RegexpLiteral
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#percent-r
-  Enabled: false
-
-Style/MutableConstant:
-  # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/MutableConstant
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#unless-for-negatives
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/FrozenStringLiteralComment
-  Enabled: false
-
-Style/FormatStringToken:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Style/FormatStringToken
-  Enabled: false
-
-# Use quotes for string literals when they are enough.
-Style/UnneededPercentQ:
-  Enabled: true
-
-Style/SymbolArray:
-  # https://github.com/bbatsov/ruby-style-guide#percent-i
-  Enabled: false
-
-Style/ModuleFunction:
-  # https://github.com/bbatsov/ruby-style-guide#module-function
-  Enabled: false
-
-# Layout
-Layout/AlignHash:
+Layout/HashAlignment:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/AlignHash
   EnforcedColonStyle: table
   EnforcedHashRocketStyle: table
 
-# No extra empty lines.
-Layout/EmptyLines:
+Rails/IndexWith:
+  Enabled: true
+
+# Prefer &&/|| over and/or.
+Style/AndOr:
+  Enabled: true
+
+# Align `when` with `case`.
+Layout/CaseIndentation:
+  Enabled: true
+
+Layout/ClosingHeredocIndentation:
+  Enabled: true
+
+# Align comments with method definitions.
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/ElseAlignment:
+  Enabled: true
+
+# Align `end` with the matching keyword or starting expression except for
+# assignments, where it should be aligned with the LHS.
+Layout/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: keyword
+  AutoCorrect: true
+
+Layout/ExtraSpacing:
+  Enabled: true
+  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/ExtraSpacing
+  AllowForAlignment: true
+
+Layout/EndOfLine:
+  Enabled: true
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+
+Layout/EmptyLinesAroundBlockBody:
   Enabled: true
 
 # In a regular class definition, no empty lines around the body.
 Layout/EmptyLinesAroundClassBody:
   Enabled: true
 
-Layout/ExtraSpacing:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/ExtraSpacing
-  AllowForAlignment: true
+# In a regular method definition, no empty lines around the body.
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+# In a regular module definition, no empty lines around the body.
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+Style/HashSyntax:
+  Enabled: true
 
 # Two spaces, no tabs (for indentation).
 Layout/IndentationWidth:
   Enabled: true
 
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: normal
+
+Layout/LeadingCommentSpace:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAfterSemicolon:
+  Enabled: true
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+
+Layout/SpaceAroundKeyword:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+
+Layout/SpaceBeforeComma:
+  Enabled: true
+
+Layout/SpaceBeforeComment:
+  Enabled: true
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+
+Style/DefWithParentheses:
+  Enabled: true
+
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
+  Enabled: true
+
+Style/RedundantFreeze:
+  Enabled: true
+
+# Use `foo {}` not `foo{}`.
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+# Use `foo { bar }` not `foo {bar}`.
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+
+# Use `{ a: 1 }` not `{a:1}`.
 Layout/SpaceInsideHashLiteralBraces:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/SpaceInsideHashLiteralBraces
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#spaces-operators
-  EnforcedStyle: space
+  Enabled: true
 
-Layout/CaseIndentation:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/CaseIndentation
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#indent-when-to-case
-  Enabled: false
+Layout/SpaceInsideParens:
+  Enabled: true
 
+# Check quotes usage according to lint rule below.
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
 
-## EnforcedStyle: with_first_parameter
-#
-#foo :bar,
-#    :baz
-Layout/AlignParameters:
-  #http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/AlignParameters
-  EnforcedStyle: with_first_parameter
+# Detect hard tabs, no hard tabs.
+Layout/IndentationStyle:
+  Enabled: true
 
-Layout/MultilineOperationIndentation:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/MultilineOperationIndentation
-  EnforcedStyle: indented
+# Empty lines should not have any spaces.
+Layout/TrailingEmptyLines:
+  Enabled: true
 
-Layout/IndentFirstArrayElement:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/IndentArray
-  Enabled: false
+# No trailing whitespace.
+Layout/TrailingWhitespace:
+  Enabled: true
 
-Layout/MultilineMethodCallIndentation:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/MultilineMethodCallIndentation
-  Enabled: false
+# Use quotes for string literals when they are enough.
+Style/RedundantPercentQ:
+  Enabled: true
 
-# Lint
+Lint/AmbiguousOperator:
+  Enabled: true
 
-# Align `end` with the matching keyword or starting expression except for
-# assignments, where it should be aligned with the LHS.
+Lint/AmbiguousRegexpLiteral:
+  Enabled: true
 
-Layout/EndAlignment:
-  # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/EndAlignment
-  EnforcedStyleAlignWith: keyword
+Lint/DuplicateRequire:
+  Enabled: true
 
-Lint/AmbiguousBlockAssociation: # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Lint/AmbiguousBlockAssociation
-                                # https://github.com/konvenit/guidelines/blob/master/ruby.mdruby-style-guide#syntax
-  Exclude:
-    - "spec/**/*"
-# Metrics
-Metrics/LineLength:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Metrics/LineLength
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#80-character-limits
-  Max: 130
+Lint/ErbNewArguments:
+  Enabled: true
 
-Metrics/AbcSize:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Metrics/AbcSize
-  # http://wiki.c2.com/?AbcMetric
-  Enabled: false
+# Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
+Lint/RequireParentheses:
+  Enabled: true
 
-Metrics/MethodLength:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Metrics/MethodLength
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#short-methods
-  Enabled: false
+Lint/RedundantStringCoercion:
+  Enabled: true
 
-Metrics/ClassLength:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Metrics/ClassLength
-  Enabled: false
+Lint/UriEscapeUnescape:
+  Enabled: true
 
-Metrics/ModuleLength:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Metrics/ModuleLength
-  Enabled: false
+Lint/UselessAssignment:
+  Enabled: true
 
-Metrics/BlockLength:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Metrics/BlockLength
-  Enabled: false
+Lint/DeprecatedClassMethods:
+  Enabled: true
 
-Metrics/CyclomaticComplexity:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Metrics/CyclomaticComplexity
-  Enabled: false
+Style/ParenthesesAroundCondition:
+  Enabled: true
 
-Metrics/PerceivedComplexity:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Metrics/PerceivedComplexity
-  Enabled: false
+Style/HashTransformKeys:
+  Enabled: true
 
-# Naming
-Naming/VariableNumber:
-  # http://www.rubydoc.info/gems/rubocop/0.43.0/RuboCop/Cop/Naming/VariableNumber
-  Enabled: false
-#This cop makes sure that predicates are named properly.
-#http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Name/PredicateName
-## bad
-#def has_value?
-#end
-#
-## good
-#def value?
-#end
-Naming/PredicateName:
-  Enabled: false
+Style/HashTransformValues:
+  Enabled: true
 
-#https://github.com/bbatsov/ruby-style-guide#accessor_mutator_method_names
-Naming/AccessorMethodName:
-  Enabled: false
+Style/RedundantBegin:
+  Enabled: true
+
+Style/RedundantReturn:
+  Enabled: true
+  AllowMultipleReturnValues: true
+
+Style/Semicolon:
+  Enabled: true
+  AllowAsExpressionSeparator: true
+
+# Prefer Foo.method over Foo::method
+Style/ColonMethodCall:
+  Enabled: true
+
+Style/TrivialAccessors:
+  Enabled: true
+
+Performance/BindCall:
+  Enabled: true
+
+Performance/FlatMap:
+  Enabled: true
+
+Performance/MapCompact:
+  Enabled: true
+
+Performance/RedundantMerge:
+  Enabled: true
+
+Performance/StartWith:
+  Enabled: true
+
+Performance/EndWith:
+  Enabled: true
+
+Performance/RegexpMatch:
+  Enabled: true
+
+Performance/ReverseEach:
+  Enabled: true
+
+Performance/StringReplacement:
+  Enabled: true
+
+Performance/UnfreezeString:
+  Enabled: true
+
+Performance/DeletePrefix:
+  Enabled: true
+
+Performance/DeleteSuffix:
+  Enabled: true
+
+RSpec/Focus:
+  Enabled: true
