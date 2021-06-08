@@ -31,21 +31,15 @@ Layout/LineLength:
   # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/LineLength
   # https://github.com/konvenit/guidelines/blob/master/ruby.md#80-character-limits
   Max: 130
+  AutoCorrect: false
 
 Layout/HashAlignment:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/AlignHash
   EnforcedColonStyle: table
   EnforcedHashRocketStyle: table
 
-Rails/IndexWith:
-  Enabled: true
-
 # Prefer &&/|| over and/or.
 Style/AndOr:
-  Enabled: true
-
-# Align `when` with `case`.
-Layout/CaseIndentation:
   Enabled: true
 
 Layout/ClosingHeredocIndentation:
