@@ -9,16 +9,13 @@ This gem checks the style for Rails projects.
   VERSION = "1.2.0"
 ```
 
-2. commit the changes
+2. commit the changes and push to master
 ```
-git commit -m "v1.2.0" # Version number is 1.2.0
+git commit -am "v1.2.0" # Version number is 1.2.0
 git push
 ```
 
-3. push
-`git push`
-
-4. Tag the new release
+3. Tag the new release
 
 ```
 git tag -a v1.2.0 -m "Changes TODO"
