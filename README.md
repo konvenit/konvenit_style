@@ -32,6 +32,7 @@ gem "konvenit_style", git: "git@github.com:konvenit/konvenit_style.git", require
 
 ## Usage
 
+
 add the following to the top of your `.rubocop.yml` file:
 
 ```yaml
