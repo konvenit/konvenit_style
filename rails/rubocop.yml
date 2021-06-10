@@ -56,7 +56,7 @@ Layout/ElseAlignment:
 # assignments, where it should be aligned with the LHS.
 Layout/EndAlignment:
   Enabled: true
-  EnforcedStyleAlignWith: keyword
+  EnforcedStyleAlignWith: variable
   AutoCorrect: true
 
 Layout/ExtraSpacing:
@@ -176,9 +176,6 @@ Style/RedundantPercentQ:
 Lint/AmbiguousOperator:
   Enabled: true
 
-Lint/AmbiguousRegexpLiteral:
-  Enabled: true
-
 Lint/DuplicateRequire:
   Enabled: true
 
@@ -208,9 +205,6 @@ Style/HashTransformKeys:
   Enabled: true
 
 Style/HashTransformValues:
-  Enabled: true
-
-Style/RedundantBegin:
   Enabled: true
 
 Style/RedundantReturn:
