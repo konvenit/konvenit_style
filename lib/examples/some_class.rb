@@ -13,6 +13,10 @@
 #
 
 class OfferAcceptance < ApplicationRecord
+  offer_id_regex        /Lieferantenproduktnummer\:\s+\w+\/(\d+)/
+  project_number_regex  /Lieferantenproduktnummer\:\s+(\w+)\/\d+/
+  ordering_number_regex /Bestell-Nr\.:\s?([^\s]+)/
+
   include OfferAcceptanceWarnings
 
   linked_to :authorizer, polymorphic: true
@@ -170,5 +174,30 @@ class OfferAcceptance < ApplicationRecord
 
   def presenter
     @presenter ||= OfferAcceptancePresenter.new(self)
+  end
+
+  def case_intention
+    if logo_url.blank?
+      logo_url = case state_name
+      when :preferred_partner
+        "preferred_partner.png"
+      when :framework_agreement_partner
+        current_client_instance.try(:logo_url).presence || "haus.gif"
+      else
+        "fa-home_22x22.png"
+      end
+    end
+    logo_url
+  end
+
+  def translate(input)
+    translated = input.split("\n").reject(&:blank?).each_with_index.map do |line, index|
+      begin
+        translate_line line
+      rescue => e
+        raise ExpressProjects::KonvenischSyntaxException.new(index + 1, input, ""), e.message
+      end
+    end
+    translated.join("\n")
   end
 end
