@@ -93,6 +93,9 @@ Style/HashSyntax:
 Layout/IndentationWidth:
   Enabled: true
 
+Layout/CaseIndentation:
+  Enabled: true
+
 Layout/IndentationConsistency:
   Enabled: true
   EnforcedStyle: normal

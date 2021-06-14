@@ -179,13 +179,13 @@ class OfferAcceptance < ApplicationRecord
   def case_intention
     if logo_url.blank?
       logo_url = case state_name
-      when :preferred_partner
-        "preferred_partner.png"
-      when :framework_agreement_partner
-        current_client_instance.try(:logo_url).presence || "haus.gif"
-      else
-        "fa-home_22x22.png"
-      end
+                 when :preferred_partner
+                   "preferred_partner.png"
+                 when :framework_agreement_partner
+                   current_client_instance.try(:logo_url).presence || "haus.gif"
+                 else
+                   "fa-home_22x22.png"
+                 end
     end
     logo_url
   end
