@@ -12,7 +12,11 @@
 #  authorizer_type :string(255)      default("Person")
 #
 
+# frozen_string_literal: true
+
+# Some documentation for Person EmptyLineAfterMagicComment
 class OfferAcceptance < ApplicationRecord
+  # my magic comment
   offer_id_regex        /Lieferantenproduktnummer\:\s+\w+\/(\d+)/
   project_number_regex  /Lieferantenproduktnummer\:\s+(\w+)\/\d+/
   ordering_number_regex /Bestell-Nr\.:\s?([^\s]+)/
@@ -168,12 +172,37 @@ class OfferAcceptance < ApplicationRecord
     end
   end
 
-  def dynamic_attachment_filename
-    presenter.pdf_name
-  end
 
   def presenter
     @presenter ||= OfferAcceptancePresenter.new(self)
+  end
+
+  def here_doc
+    expect(oci.longtext_n).to eq <<-LONGTEXT.squeeze(" ").strip
+                                     Dienstleister:
+                                     #{negotiation.supplier.name}
+                                     Startdatum:
+                                     #{first_date.strftime('%d.%m.%Y')}
+                                     Enddatum:
+                                     #{last_date.strftime('%d.%m.%Y')}
+                                     Personenzahl:
+                                     #{project.number_of_people}
+                                     Kommentar:
+                                     #{offer.comment}
+                                 LONGTEXT
+    correspondence = FactoryGirl.create :correspondence,
+                                        body: <<~HTML.strip_heredoc
+                                                <head>
+                                                  <style type="text/css">
+                                                    <!--
+                                                    body, h1, h2, h3, h4, p, ul, ol, li, dl, dt, dd, div, td, th {
+                                                      font-family: arial, calibri, sans-serif;
+                                                    }
+                                                    //-->
+                                                  </style>
+                                                </head>
+                                              HTML
+    correspondence
   end
 
   def case_intention

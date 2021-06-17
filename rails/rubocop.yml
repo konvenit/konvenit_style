@@ -42,9 +42,6 @@ Layout/HashAlignment:
 Style/AndOr:
   Enabled: true
 
-Layout/ClosingHeredocIndentation:
-  Enabled: true
-
 # Align comments with method definitions.
 Layout/CommentIndentation:
   Enabled: true
