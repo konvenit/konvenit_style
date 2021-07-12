@@ -6,20 +6,20 @@ This gem checks the style for Rails projects.
 
 1. bump the version number lib/konvenit_style/version.rb
 ```
-  VERSION = "1.16.3"
+  VERSION = "1.16.4"
 ```
 
 2. commit the changes and push to master
 ```
-git commit -am "v1.16.3" # Version number is 1.16.3
+git commit -am "v1.16.4" # Version number is 1.16.4
 git push
 ```
 
 3. Tag the new release
 
 ```
-git tag -a v1.16.3 -m "Changes TODO"
-git push origin v1.16.3
+git tag -a v1.16.4 -m "Changes TODO"
+git push origin v1.16.4
 ```
 
 ## Installation
