@@ -172,7 +172,6 @@ class OfferAcceptance < ApplicationRecord
     end
   end
 
-
   def presenter
     @presenter ||= OfferAcceptancePresenter.new(self)
   end
