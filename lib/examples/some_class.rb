@@ -176,6 +176,42 @@ class OfferAcceptance < ApplicationRecord
     @presenter ||= OfferAcceptancePresenter.new(self)
   end
 
+  def some_mariusz_style
+    [ #  result     keep = 0     keep = 1     keep = 2     keep = 3     keep = 4     keep = 5     keep = 6     keep = 7
+      [:oldest__,     del    ,     del    ,     del    ,     del    ,     del    , still_exist, still_exist, still_exist],
+      [:fastest_,     del    ,     del    ,     del    ,     del    ,     del    ,     del    , still_exist, still_exist],
+      [:as_old__,     del    ,     del    ,     del    ,     del    , still_exist, still_exist, still_exist, still_exist],
+      [:young___, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist],
+      [:younger_, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist],
+      [:youngest, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist],
+      [:old___c2,     del    ,     del    , still_exist, still_exist, still_exist, still_exist, still_exist, still_exist],
+      [:young_c2, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist, still_exist],
+      #
+    ].tap do |matrix_rows|
+      7.downto(0) do |keep_value|
+        AppStatus::JobUtils.clean_old_results(age: age_to_protect_only_young, keep: keep_value)
+        expect(all_not_finished.map { |result| r[result] }).to all(still_exist)
+        matrix_rows.each do |matcher_for|
+          r_name = matcher_for.first
+          be_good = matcher_for[keep_value + 1]
+          expect(r[r_name]).to be_good, "When keeping #{keep_value}, expected :#{r_name} to #{be_good.description}"
+        end
+      end
+    end
+
+    queue_one = {
+      normal_hours:  %w[                          7:36 12:00 15:19 15:20 19:59 ],
+      ignored_hours: %w[ 0:00 0:01 7:29 7:30 7:35                              20:00 20:01 23:59 24:00]
+    }
+    queue_two = {
+      normal_hours:  %w[ 0:00 0:01 7:29                            15:20 19:59 20:00 20:01 23:59 24:00],
+      ignored_hours: %w[                7:30 7:35 7:36 12:00 15:19 ]
+    }
+
+    puts queue_one
+    puts queue_two
+  end
+
   def here_doc
     expect(oci.longtext_n).to eq <<-LONGTEXT.squeeze(" ").strip
                                      Dienstleister:

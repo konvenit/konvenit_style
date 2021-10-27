@@ -56,11 +56,6 @@ Layout/EndAlignment:
   EnforcedStyleAlignWith: keyword
   AutoCorrect: true
 
-Layout/ExtraSpacing:
-  Enabled: true
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/ExtraSpacing
-  AllowForAlignment: true
-
 Layout/EndOfLine:
   Enabled: true
 
@@ -116,9 +111,6 @@ Layout/SpaceAroundKeyword:
   Enabled: true
 
 Layout/SpaceAroundOperators:
-  Enabled: true
-
-Layout/SpaceBeforeComma:
   Enabled: true
 
 Layout/SpaceBeforeComment:
