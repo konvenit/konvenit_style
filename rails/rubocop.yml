@@ -157,10 +157,6 @@ Layout/IndentationStyle:
 Layout/TrailingEmptyLines:
   Enabled: true
 
-# No more then one empty line
-Layout/EmptyLines:
-  Enabled: true
-
 # No trailing whitespace.
 Layout/TrailingWhitespace:
   Enabled: true

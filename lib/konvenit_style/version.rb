@@ -1,3 +1,3 @@
 module KonvenitStyle
-  VERSION = "1.17.0"
+  VERSION = "1.17.1"
 end
