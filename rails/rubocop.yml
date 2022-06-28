@@ -27,12 +27,6 @@ AllCops:
     - "node_modules/**/*"
     - "ruby-build/**/*"
 
-Layout/LineLength:
-  # http://www.rubydoc.info/github/bbatsov/RuboCop/RuboCop/Cop/Layout/LineLength
-  # https://github.com/konvenit/guidelines/blob/master/ruby.md#80-character-limits
-  Max: 130
-  AutoCorrect: false
-
 Layout/HashAlignment:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/AlignHash
   EnforcedColonStyle: table
