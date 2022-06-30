@@ -27,6 +27,10 @@ AllCops:
     - "node_modules/**/*"
     - "ruby-build/**/*"
 
+# NO MORE LINELENGTH CHECKING
+Layout/LineLength:
+  Enabled: false
+
 Layout/HashAlignment:
   # http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/AlignHash
   EnforcedColonStyle: table
