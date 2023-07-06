@@ -1,4 +1,4 @@
-# KonvenitStyle
+# KonvenitStyle [![CI](https://github.com/konvenit/konvenit_style/actions/workflows/ci.yml/badge.svg)](https://github.com/konvenit/konvenit_style/actions/workflows/ci.yml)
 
 This gem checks the style for Rails projects.
 
