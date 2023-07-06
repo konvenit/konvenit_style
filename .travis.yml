@@ -1,7 +1,0 @@
-language: ruby
-
-dist: bionic
-
-sudo: required
-
-script: bundle exec rubocop -D -c .rubocop.yml

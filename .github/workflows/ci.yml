@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        rvm:
+          - '3.0'
+          - '3.1'
+    name: Ruby ${{ matrix.ruby }} test
+    steps:
+      - name: Add SSH key
+        # this is needed to access private repositories
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.PRIVATE_REPO_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo ${{  secrets.PRIVATE_REPO_KNOW_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Run RuboCop
+        run: bundle exec rubocop -D -c .rubocop.yml
