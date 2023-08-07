@@ -17,6 +17,7 @@ jobs:
         rvm:
           - '3.0'
           - '3.1'
+          - '3.2'
     name: Ruby ${{ matrix.ruby }} test
     steps:
       - name: Add SSH key

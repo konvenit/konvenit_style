@@ -78,6 +78,7 @@ Layout/EmptyLinesAroundModuleBody:
 # Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
 Style/HashSyntax:
   Enabled: true
+  EnforcedShorthandSyntax: either # accepts both shorthand and explicit use of hash literal value
 
 # Two spaces, no tabs (for indentation).
 Layout/IndentationWidth:
@@ -125,6 +126,9 @@ Style/MethodDefParentheses:
   Enabled: true
 
 Style/RedundantFreeze:
+  Enabled: true
+
+Style/ReturnNilInPredicateMethodDefinition :
   Enabled: true
 
 # Use `foo {}` not `foo{}`.
@@ -234,3 +238,4 @@ Performance/DeleteSuffix:
 
 RSpec/Focus:
   Enabled: true
+  
