@@ -17,7 +17,8 @@ jobs:
         rvm:
           - '3.0'
           - '3.1'
-    name: Ruby ${{ matrix.ruby }} test
+          - '3.2'
+    name: Ruby ${{ matrix.rvm }} test
     steps:
       - name: Add SSH key
         # this is needed to access private repositories

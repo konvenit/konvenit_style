@@ -109,6 +109,14 @@ class OfferAcceptance < ApplicationRecord
     negotiation.try(:confirm_offer_acceptance!)
   end
 
+  def allow_both_hash_with_values(a: nil, b: nil)
+    { a: a, b: b }
+  end
+
+  def allow_both_hash_with_value_obmission(a: nil, b: nil)
+    { a: a, b: b }
+  end
+
   def accepted?
     offer.try(:accepted?)
   end
