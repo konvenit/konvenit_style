@@ -128,9 +128,6 @@ Style/MethodDefParentheses:
 Style/RedundantFreeze:
   Enabled: true
 
-Style/ReturnNilInPredicateMethodDefinition :
-  Enabled: true
-
 # Use `foo {}` not `foo{}`.
 Layout/SpaceBeforeBlockBraces:
   Enabled: true
