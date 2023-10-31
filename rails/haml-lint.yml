@@ -1,4 +1,6 @@
 linters:
-  HamlLint:
+  AltText:
     enabled: true
     severity: error
+  Rubocop:
+    enabled: false
