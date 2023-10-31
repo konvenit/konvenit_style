@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rubocop-rails"
   spec.add_dependency "rubocop-rspec"
   spec.add_dependency "rubocop-performance"
+  spec.add_dependency "haml_lint"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
