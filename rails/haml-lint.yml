@@ -1,0 +1,4 @@
+linters:
+  HamlLint:
+    enabled: true
+    severity: error
