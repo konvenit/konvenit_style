@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    konvenit_style (1.17.2)
+    konvenit_style (1.17.3)
       rubocop
       rubocop-checkstyle_formatter
       rubocop-performance
