@@ -7,10 +7,12 @@
 # its based on the rails rubocop settings
 # https://github.com/rails/rails/blob/57201658e7c16d1a90ca53dc5bc974311db8ec1f/.rubocop.yml
 
-require:
+plugins:
   - rubocop-rails
   - rubocop-performance
   - rubocop-rspec
+  - rubocop-capybara
+  - rubocop-factory_bot
 
 AllCops:
   DisplayCopNames: true
@@ -235,4 +237,3 @@ Performance/DeleteSuffix:
 
 RSpec/Focus:
   Enabled: true
-  
