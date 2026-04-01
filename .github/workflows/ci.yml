@@ -9,15 +9,26 @@ on:
       - master
 
 jobs:
+  scan:
+    name: Gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   test:
     runs-on: ubuntu-22.04
 
     strategy:
       matrix:
         rvm:
-          - '3.2'
-          - '3.3'
-          - '3.4'
+          - "3.2"
+          - "3.3"
+          - "3.4"
     name: Ruby ${{ matrix.rvm }} test
     steps:
       - name: Add SSH key
