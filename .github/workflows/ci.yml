@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - master
+  # Every pull request, not only those against master: a stacked PR whose base
+  # is another feature branch has to be checked as well.
   pull_request:
-    branches:
-      - master
 
 jobs:
   scan:
