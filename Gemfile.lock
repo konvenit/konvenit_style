@@ -21,6 +21,7 @@ GEM
     ast (2.4.3)
     base64 (0.3.0)
     concurrent-ruby (1.2.3)
+    diff-lcs (1.6.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     json (2.6.3)
@@ -37,6 +38,19 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.11.3)
+    rspec (3.13.2)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.6)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.5)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.8)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.7)
     rubocop (1.84.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -85,6 +99,7 @@ DEPENDENCIES
   bundler
   konvenit_style!
   rake
+  rspec (~> 3.13)
 
 BUNDLED WITH
    2.7.2

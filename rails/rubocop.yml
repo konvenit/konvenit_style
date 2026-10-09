@@ -14,6 +14,9 @@ plugins:
   - rubocop-capybara
   - rubocop-factory_bot
 
+require:
+  - konvenit_style/cops
+
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
@@ -28,6 +31,12 @@ AllCops:
     - "vendor/**/*"
     - "node_modules/**/*"
     - "ruby-build/**/*"
+
+# Keep comments short: at most 2 lines per comment block.
+# Disabled for full runs, only checked on PR changes via reviewdog (see README).
+Konvenit/CommentLength:
+  Enabled: false
+  Max: 2
 
 # NO MORE LINELENGTH CHECKING
 Layout/LineLength:
