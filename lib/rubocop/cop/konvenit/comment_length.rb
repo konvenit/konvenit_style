@@ -11,7 +11,7 @@ module RuboCop
         def on_new_investigation
           comment_blocks.each do |block|
             next if block.size <= max || block.first.text.match?(ANNOTATE_HEADER)
-            range = block.first.source_range.join(block.last.source_range)
+            range = block[max].source_range.join(block.last.source_range)
             add_offense(range, message: format(MSG, count: block.size, max: max))
           end
         end

@@ -33,8 +33,9 @@ AllCops:
     - "ruby-build/**/*"
 
 # Keep comments short: at most 2 lines per comment block.
+# Disabled for full runs, only checked on PR changes via reviewdog (see README).
 Konvenit/CommentLength:
-  Enabled: true
+  Enabled: false
   Max: 2
 
 # NO MORE LINELENGTH CHECKING

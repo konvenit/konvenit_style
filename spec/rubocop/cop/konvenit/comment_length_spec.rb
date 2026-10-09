@@ -6,9 +6,20 @@ RSpec.describe RuboCop::Cop::Konvenit::CommentLength, :config do
   it "registers an offense for a comment block longer than Max" do
     expect_offense(<<~RUBY)
       # first line
-      ^^^^^^^^^^^^ Comment has too many lines. [3/2]
       # second line
       # third line
+      ^^^^^^^^^^^^ Comment has too many lines. [3/2]
+      def foo; end
+    RUBY
+  end
+
+  it "registers the offense starting at the first line exceeding Max" do
+    expect_offense(<<~RUBY)
+      # first line
+      # second line
+      # third line
+      ^^^^^^^^^^^^ Comment has too many lines. [4/2]
+      # fourth line
       def foo; end
     RUBY
   end
@@ -46,9 +57,9 @@ RSpec.describe RuboCop::Cop::Konvenit::CommentLength, :config do
     expect_offense(<<~RUBY)
       def foo
         # first line
-        ^^^^^^^^^^^^ Comment has too many lines. [3/2]
         # second line
         # third line
+        ^^^^^^^^^^^^ Comment has too many lines. [3/2]
         bar
       end
     RUBY
@@ -88,8 +99,8 @@ RSpec.describe RuboCop::Cop::Konvenit::CommentLength, :config do
     it "registers an offense for a two line comment" do
       expect_offense(<<~RUBY)
         # first line
-        ^^^^^^^^^^^^ Comment has too many lines. [2/1]
         # second line
+        ^^^^^^^^^^^^^ Comment has too many lines. [2/1]
         def foo; end
       RUBY
     end
