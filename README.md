@@ -72,9 +72,10 @@ jobs:
           skip_install: true
           use_bundler: true
           rubocop_flags: --only Konvenit/CommentLength
+          only_changed: true
           reporter: github-pr-review
           filter_mode: added
-          fail_level: error
+          fail_level: any # rubocop "convention" offenses are reported as INFO
 ```
 
 To check your current changes locally:
