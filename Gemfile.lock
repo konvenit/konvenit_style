@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    konvenit_style (1.18.0)
+    konvenit_style (1.18.1)
       ostruct
       rubocop (~> 1.72)
       rubocop-capybara (~> 2.22)
