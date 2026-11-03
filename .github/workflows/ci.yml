@@ -27,9 +27,9 @@ jobs:
     strategy:
       matrix:
         rvm:
-          - "3.2"
           - "3.3"
           - "3.4"
+          - "4.0"
     name: Ruby ${{ matrix.rvm }} test
     steps:
       - name: Add SSH key
@@ -46,7 +46,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
+          ruby-version: 4.0
 
       - name: Install dependencies
         run: bundle install
